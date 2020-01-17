@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
     query = params[:query]
     products = []
     if query
-      products = Product.where("name LIKE :search", search: "%#{params[:search]}%").limit(10)
+      products = Product.where("name LIKE :search", search: "%#{query}%").limit(10)
     else
       products = Product.limit(10)
     end
