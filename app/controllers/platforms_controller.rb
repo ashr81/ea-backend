@@ -4,6 +4,6 @@ class PlatformsController < ApplicationController
     return render json: {error: "Please select product"} unless product_id
     platforms = Platform.joins(:product_platforms).where(product_platforms: { product_id: product_id})
     return render json: {error: 'Selected product doesn\'t support any platforms'} if platforms.empty?
-    platforms
+    render json: platforms
   end
 end
