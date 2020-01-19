@@ -3,9 +3,9 @@ class ProductsController < ApplicationController
     query = params[:query]
     products = []
     if query
-      products = Product.where("name LIKE :search", search: "%#{query}%").limit(10)
+      products = Product.select([:id, :name]).where("name LIKE :search", search: "%#{query}%").limit(10)
     else
-      products = Product.limit(10)
+      products = Product.select([:id, :name]).limit(10)
     end
     render json: products
   end
