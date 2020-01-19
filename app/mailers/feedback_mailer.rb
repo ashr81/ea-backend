@@ -7,7 +7,7 @@ class FeedbackMailer < ApplicationMailer
     @email = params[:email]
     mail(
       from: ENV['APP_FROM_EMAIL'],
-      bcc: [ENV['APP_FROM_EMAIL']]
+      bcc: [ENV['APP_FROM_EMAIL']],
       to: params[:email],
       subject: "Request Received: #{params[:subject]}"
     )

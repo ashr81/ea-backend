@@ -13,12 +13,12 @@
 ActiveRecord::Schema.define(version: 2020_01_19_053616) do
 
   create_table "feedbacks", force: :cascade do |t|
-    t.string "email"
+    t.string "email", null: false
     t.text "description"
-    t.text "subject"
-    t.integer "product_id"
-    t.integer "platform_id"
-    t.integer "topic_id"
+    t.text "subject", null: false
+    t.integer "product_id", null: false
+    t.integer "platform_id", null: false
+    t.integer "topic_id", null: false
     t.integer "issue_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
