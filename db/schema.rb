@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_17_132405) do
+ActiveRecord::Schema.define(version: 2020_01_19_053616) do
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.string "email"
+    t.text "description"
+    t.text "subject"
+    t.integer "product_id"
+    t.integer "platform_id"
+    t.integer "topic_id"
+    t.integer "issue_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "issues", force: :cascade do |t|
     t.string "name"

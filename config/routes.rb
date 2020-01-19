@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :platforms, only: [:index]
   resources :topics, only: [:index]
   resources :issues, only: [:index]
+  resources :feedback, only: [:create]
 end
