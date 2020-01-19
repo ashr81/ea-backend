@@ -1,7 +1,8 @@
 class FeedbackController < ApplicationController
   def create
-    if Feedback.create!(feedback_params)
-      FeedbackMailer.request_confirmation(feedback_params).deliver_later
+    feedback = Feedback.create!(feedback_params)
+    if feedback
+      FeedbackMailer.request_confirmation(feedback).deliver_later
       return render json: {success: true}
     end
     return render json: { success: false }
